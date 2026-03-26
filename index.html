@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Heat Watch | Official Dashboard</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #dc3545;
+            --watch: #ffcc00;
+            --alert: #fd7e14;
+            --normal: #28a745;
+            --bg-light: #f8f9fa;
+            --border: #e9ecef;
+        }
 
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #212529; overflow-x: hidden; }
+        .malayalam { font-family: 'Manjari', sans-serif; }
+
+        /* Header */
+        .navbar { border-bottom: 2px solid var(--primary); background: #fff; z-index: 1000; }
+        .sync-badge { font-size: 0.75rem; background: var(--bg-light); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border); }
+
+        /* Sidebar */
+        .sidebar { height: calc(100vh - 70px); overflow-y: auto; border-right: 1px solid var(--border); padding: 20px; background: #fff; }
+        
+        /* Map Area */
+        #map { height: 600px; width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+
+        /* Cards */
+        .status-card { border: 1px solid var(--border); border-left: 5px solid #ddd; border-radius: 8px; margin-bottom: 12px; padding: 12px; transition: 0.2s; }
+        .status-card:hover { transform: translateX(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card-alert { border-left-color: var(--primary); }
+        .card-watch { border-left-color: var(--watch); }
+
+        /* Table */
+        .table-container { background: #fff; border-radius: 12px; border: 1px solid var(--border); padding: 15px; margin-top: 30px; }
+        .table thead th { border-top: none; color: #6c757d; font-size: 0.85rem; text-transform: uppercase; }
+
+        /* KSDMA Section */
+        .ksdma-box { background: #fff5f5; border: 1px solid #ffcccc; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .ksdma-map-frame { width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-top: 15px; }
+
+        @media (max-width: 768px) { .sidebar { height: auto; border-right: none; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-danger" href="#">
+            🔴 KERALA <span class="text-dark">HEAT WATCH</span>
+        </a>
+        <div id="sync-info" class="sync-badge">Syncing...</div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 sidebar">
+            <h6 class="fw-bold mb-3 text-muted">STATION SUMMARY</h6>
+            <div id="station-feed">
+                </div>
+        </div>
+
+        <div class="col-lg-9 p-4">
+            <div id="ksdma-section" class="ksdma-box">
+                <h5 class="malayalam fw-bold text-danger" id="alert-header">Loading Alert...</h5>
+                <p class="malayalam mb-0 text-muted" id="alert-text"></p>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="table-container shadow-sm">
+                <h6 class="fw-bold mb-3">SCIENTIFIC DATA MATRIX</h6>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Station</th>
+                                <th>Temp</th>
+                                <th>Feel</th>
+                                <th>Departure</th>
+                                <th>Humidity</th>
+                                <th>Rainfall</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h6 class="fw-bold">HUMIDITY INDEX MAP</h6>
+                    <img id="humid-map" class="ksdma-map-frame" src="" alt="Humidity Map Loading...">
+                </div>
+                <div class="col-md-6">
+                    <h6 class="fw-bold">MAX TEMPERATURE MAP</h6>
+                    <img id="max-map" class="ksdma-map-frame" src="" alt="Max Temp Map Loading...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    let map = L.map('map').setView([10.5, 76.5], 7);
+    
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Fetch District Boundaries from your Open Maps Repo
+    const GEOJSON_URL = "https://raw.githubusercontent.com/medonthomas-alt/Kerala_Open_Maps/main/data/administrative/districts/Kerala_LGD_Districts.geojson";
+
+    async function init() {
+        try {
+            // 1. Load District Polygons
+            const geoRes = await fetch(GEOJSON_URL);
+            const districts = await geoRes.json();
+            L.geoJSON(districts, {
+                style: { color: '#ddd', weight: 1.5, fillColor: '#f9f9f9', fillOpacity: 0.5 }
+            }).addTo(map);
+
+            // 2. Load Weather Data
+            const weatherRes = await fetch('data/weather.json');
+            const data = await weatherRes.json();
+            
+            updateDashboard(data);
+        } catch (e) { console.error("Data Load Error:", e); }
+    }
+
+    function updateDashboard(data) {
+        // Update Sync Info
+        document.getElementById('sync-info').innerText = `Updated: ${data.meta.sync_at || data.meta.fetched_at}`;
+        
+        // Update KSDMA Alerts
+        document.getElementById('alert-header').innerText = data.meta.alert_header;
+        document.getElementById('alert-text').innerText = data.meta.alert_paragraphs.join(' ');
+        document.getElementById('humid-map').src = data.meta.humid_map;
+        document.getElementById('max-map').src = data.meta.max_map;
+
+        const feed = document.getElementById('station-feed');
+        const table = document.getElementById('data-table');
+
+        data.stations.forEach(st => {
+            const color = st.status === 'Alert' ? '#dc3545' : st.status === 'Watch' ? '#fd7e14' : '#28a745';
+            
+            // Marker
+            L.circleMarker([st.lat, st.lon], {
+                radius: 8, fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="text-center">
+                    <h6 class="fw-bold mb-1">${st.name}</h6>
+                    <div style="font-size: 1.2rem; color:${color}">${st.temp}°C</div>
+                    <small>Feel: ${st.real_feel}°C | Hum: ${st.humidity}%</small>
+                </div>
+            `);
+
+            // Sidebar Card
+            const card = `
+                <div class="status-card card-${st.status.toLowerCase()}">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <span class="fw-bold">${st.name}</span>
+                        <span class="badge" style="background:${color}">${st.temp}°C</span>
+                    </div>
+                    <small class="text-muted">${st.status} Mode</small>
+                </div>
+            `;
+            feed.innerHTML += card;
+
+            // Table Row
+            const row = `
+                <tr>
+                    <td class="fw-bold">${st.name}</td>
+                    <td>${st.temp}°C</td>
+                    <td>${st.real_feel}°C</td>
+                    <td class="text-${st.departure > 0 ? 'danger' : 'success'}">${st.departure}</td>
+                    <td>${st.humidity}%</td>
+                    <td>${st.rainfall}mm</td>
+                    <td><span class="badge" style="background:${color}">${st.status}</span></td>
+                </tr>
+            `;
+            table.innerHTML += row;
+        });
+    }
+
+    init();
+</script>
+</body>
+</html>
