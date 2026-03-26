@@ -1,1 +1,68 @@
-{}
+{
+    "Kannur": {
+        "temp_max": 35.0,
+        "temp_min": 26.0,
+        "condition": "Partly cloudy sky with one or two spells of rain or thundershowers",
+        "humidity": 81.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 11.86,
+        "lng": 75.36,
+        "last_update": "2026-03-26 08:50"
+    },
+    "Kottayam": {
+        "temp_max": 38.0,
+        "temp_min": 26.0,
+        "condition": "Mainly Clear sky",
+        "humidity": 89.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 9.56,
+        "lng": 76.56,
+        "last_update": "2026-03-26 08:50"
+    },
+    "Kozhikode": {
+        "temp_max": 37.0,
+        "temp_min": 27.0,
+        "condition": "Mainly Clear sky",
+        "humidity": 81.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 11.25,
+        "lng": 75.76,
+        "last_update": "2026-03-26 08:50"
+    },
+    "Punalur": {
+        "temp_max": 38.0,
+        "temp_min": 22.0,
+        "condition": "Mainly Clear sky",
+        "humidity": 90.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 9.0,
+        "lng": 76.93,
+        "last_update": "2026-03-26 08:50"
+    },
+    "Thiruvananthapuram City": {
+        "temp_max": 36.0,
+        "temp_min": 25.0,
+        "condition": "Mainly Clear sky",
+        "humidity": 60.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 8.5,
+        "lng": 76.95,
+        "last_update": "2026-03-26 08:50"
+    },
+    "Thiruvananthapuram (A)": {
+        "temp_max": 35.0,
+        "temp_min": 25.0,
+        "condition": "Mainly Clear sky",
+        "humidity": 50.0,
+        "warning_color": "4",
+        "warning_code": "1",
+        "lat": 8.46,
+        "lng": 76.95,
+        "last_update": "2026-03-26 08:50"
+    }
+}
