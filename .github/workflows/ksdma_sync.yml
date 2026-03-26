@@ -1,0 +1,26 @@
+name: Hourly KSDMA Sync
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+      - name: Run Scraper
+        run: python scrapers/ksdma_bot.py
+      - name: Commit Data
+        run: |
+          git config --local user.email "bot@github.com"
+          git config --local user.name "KSDMA-Bot"
+          git add data/weather.json
+          git commit -m "Update KSDMA Data [skip ci]" || exit 0
+          git push
