@@ -7,16 +7,16 @@
     ],
     "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/03/T-MAX-10.jpeg",
     "humid_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/03/Hot-Humid-Map.jpg",
-    "sync_at": "2026-03-26 13:28"
+    "sync_at": "2026-03-26 16:53"
   },
   "stations": [
     {
       "name": "Station 8.0833",
       "lat": 8.0833,
       "lon": 77.5,
-      "temp": 35.0,
+      "temp": 34.0,
       "status": "Normal",
-      "departure": 2.0,
+      "departure": 1.0,
       "humidity": 69.0,
       "rainfall": 0,
       "warning_code": 4
@@ -124,9 +124,9 @@
       "name": "Station 12.2833",
       "lat": 12.2833,
       "lon": 76.6333,
-      "temp": 35.0,
-      "status": "Normal",
-      "departure": 0.7,
+      "temp": 36.0,
+      "status": "Watch",
+      "departure": 1.7,
       "humidity": 58.0,
       "rainfall": 0,
       "warning_code": 4
