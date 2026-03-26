@@ -1,31 +1,62 @@
-name: Hourly MausamGram Update
-on:
-  schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+import requests
+import json
+import os
+from datetime import datetime, timedelta
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+districts = {
+    "Kasaragod": [12.510, 74.985], "Kannur": [11.874, 75.370],
+    "Wayanad": [11.610, 76.083], "Kozhikode": [11.258, 75.780],
+    "Malappuram": [11.073, 76.074], "Palakkad": [10.786, 76.654],
+    "Thrissur": [10.527, 76.214], "Ernakulam": [9.931, 76.267],
+    "Idukki": [9.850, 76.915], "Kottayam": [9.591, 76.522],
+    "Alappuzha": [9.498, 76.338], "Pathanamthitta": [9.264, 76.787],
+    "Kollam": [8.893, 76.614], "Trivandrum": [8.524, 76.936]
+}
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+def get_weather():
+    headers = {"User-Agent": "Mozilla/5.0"}
+    all_data = {}
+    working_date = None
+    
+    # 1. FIND THE WORKING DATE FIRST
+    # We try Today, Yesterday, and the day before
+    for i in range(3):
+        test_date = (datetime.now() - timedelta(days=i)).strftime("%Y%m%d") + "00"
+        test_url = f"https://mausamgram.imd.gov.in/test4_mme.php?lat_gfs=10.527&lon_gfs=76.214&date={test_date}_3hr_0p125"
+        try:
+            res = requests.get(test_url, headers=headers, timeout=10).json()
+            if "temp" in res:
+                working_date = test_date
+                print(f"✅ Found working date: {working_date}")
+                break
+        except:
+            continue
 
-      - name: Install dependencies
-        run: pip install requests
+    # 2. FETCH DATA FOR ALL DISTRICTS IF DATE FOUND
+    if working_date:
+        for name, coords in districts.items():
+            url = f"https://mausamgram.imd.gov.in/test4_mme.php?lat_gfs={coords[0]}&lon_gfs={coords[1]}&date={working_date}_3hr_0p125"
+            try:
+                response = requests.get(url, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    data = response.json()
+                    # We only save the first entry (current weather) to keep the file small
+                    all_data[name] = {
+                        "temp": data["temp"][0],
+                        "humidity": data["rh"][0],
+                        "wind": data["ws"][0],
+                        "condition": data["weather_desc"][0] if "weather_desc" in data else "Clear",
+                        "date_used": working_date
+                    }
+            except:
+                print(f"❌ Error fetching {name}")
+    else:
+        all_data = {"error": "IMD servers are currently updating. Please check back in 10 minutes."}
 
-      - name: Run Fetch Script
-        run: python fetch_weather.py
+    # 3. SAVE THE DATA
+    os.makedirs('data', exist_ok=True)
+    with open('data/weather.json', 'w') as f:
+        json.dump(all_data, f, indent=4)
 
-      - name: Commit and Push
-        run: |
-          git config --global user.name "Weather-Bot"
-          git config --global user.email "bot@github.com"
-          git add data/weather.json
-          git commit -m "Update MausamGram data" || exit 0
-          git push
+if __name__ == "__main__":
+    get_weather()
