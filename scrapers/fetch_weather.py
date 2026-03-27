@@ -70,29 +70,40 @@ def get_ksdma_meta():
                          headers={"User-Agent": "Mozilla/5.0"})
         soup = BeautifulSoup(r.text, "html.parser")
 
+        # Alert paragraphs — any <p> longer than 30 chars
         paragraphs = [
             p.get_text(strip=True)
             for p in soup.find_all("p")
             if len(p.get_text(strip=True)) > 30
         ]
 
+        # Maximum temperature map
         max_map = None
         max_link = soup.find("a", string=re.compile("maximum temperature", re.I))
         if max_link and max_link.get("href"):
             href = max_link["href"]
             max_map = href if href.startswith("http") else KSDMA_BASE + href
 
+        # Minimum temperature map
+        min_map = None
+        min_link = soup.find("a", string=re.compile("minimum temperature", re.I))
+        if min_link and min_link.get("href"):
+            href = min_link["href"]
+            min_map = href if href.startswith("http") else KSDMA_BASE + href
+
+        # Humidity map
         humid_map = None
         humid_img = soup.find("img", src=re.compile("humid|hot", re.I))
         if humid_img and humid_img.get("src"):
             src = humid_img["src"]
             humid_map = src if src.startswith("http") else KSDMA_BASE + src
 
-        print(f"  ✅ KSDMA — {len(paragraphs)} paragraphs")
+        print(f"  ✅ KSDMA — {len(paragraphs)} paragraphs, max={bool(max_map)}, min={bool(min_map)}, humid={bool(humid_map)}")
         return {
             "ksdma_source":     "Kerala State Disaster Management Authority",
             "alert_paragraphs": paragraphs[:4],
             "max_map":          max_map,
+            "min_map":          min_map,
             "humid_map":        humid_map,
         }
 
@@ -102,6 +113,7 @@ def get_ksdma_meta():
             "ksdma_source":     "Kerala State Disaster Management Authority",
             "alert_paragraphs": ["Alert data temporarily unavailable. Please check sdma.kerala.gov.in"],
             "max_map":          None,
+            "min_map":          None,
             "humid_map":        None,
         }
 
@@ -124,22 +136,31 @@ def extract(props, name, district, source):
         "lat":        props.get("Latitude"),
         "lon":        props.get("Longitude"),
         "source":     source,
+
+        # Yesterday actual
         "obs_max":    props.get("PD_Mx_Temp"),
         "obs_dep":    props.get("PD_Mx_Dep"),
         "rainfall":   props.get("Pt_24_Rain"),
         "humidity":   props.get("D1_RH_0830"),
+
+        # Today forecast
         "fc_max":     props.get("D1F_Mx_Tem"),
         "fc_min":     props.get("D1F_Mn_Tem"),
         "fc_dep":     props.get("D1F_Mx_Dep"),
         "fc_weather": props.get("D1F_Weathr"),
+
+        # 7-day forecast
         "day2_max": props.get("D2_Mx_Temp"), "day2_min": props.get("D2_Mn_Temp"), "day2_weather": props.get("D2_Weather"),
         "day3_max": props.get("D3_Mx_Temp"), "day3_min": props.get("D3_Mn_Temp"), "day3_weather": props.get("D3_Weather"),
         "day4_max": props.get("D4_Mx_Temp"), "day4_min": props.get("D4_Mn_Temp"), "day4_weather": props.get("D4_Weather"),
         "day5_max": props.get("D5_Mx_Temp"), "day5_min": props.get("D5_Mn_Temp"), "day5_weather": props.get("D5_Weather"),
         "day6_max": props.get("D6_Mx_Temp"), "day6_min": props.get("D6_Mn_Temp"), "day6_weather": props.get("D6_Weather"),
         "day7_max": props.get("D7_Mx_Temp"), "day7_min": props.get("D7_Mn_Temp"), "day7_weather": props.get("D7_Weather"),
+
         "sunrise":    props.get("Sr_Time"),
         "sunset":     props.get("Ss_Time"),
+
+        # Filled later
         "warning_color": None,
         "alert":         None,
     }
@@ -168,7 +189,7 @@ def fetch_all():
 
     stations = {}
 
-    # Step 1 — Official Kerala stations
+    # Step 1 — Official Kerala stations from forecast file
     if forecast_data:
         for feature in forecast_data.get("features", []):
             props = feature.get("properties", {})
@@ -179,7 +200,7 @@ def fetch_all():
 
     print(f"\n  📍 Official stations: {len(stations)}/13")
 
-    # Step 2 — Observed AWS inside Kerala
+    # Step 2 — Observed AWS inside Kerala boundary
     obs_count = 0
     if observed_data:
         for feature in observed_data.get("features", []):
@@ -245,8 +266,8 @@ def fetch_all():
     print(f"\n  {'Station':<34} {'Temp':>6}  Alert")
     print(f"  {'─'*34} {'─'*6}  {'─'*14}")
     for s in sorted_stations:
-        temp  = s.get("fc_max") or s.get("obs_max")
-        tstr  = f"{temp}°C" if temp else "null"
+        temp = s.get("fc_max") or s.get("obs_max")
+        tstr = f"{temp}°C" if temp else "null"
         print(f"  {s['name']:<34} {tstr:>6}  {s['alert']['en']}")
 
 if __name__ == "__main__":
