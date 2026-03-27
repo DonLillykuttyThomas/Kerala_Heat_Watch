@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-03-27T06:49:21Z",
+    "fetched_at": "2026-03-27T08:40:43Z",
     "station_count": 14,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -8,8 +8,8 @@
     "alert_paragraphs": [
       "Kerala State Disaster Management Authority",
       "ഉയർന്ന താപനില മുന്നറിയിപ്പ് – മഞ്ഞ അലർട്ട്",
-      "2026 മാർച്ച് 26 & 27 തീയതികളിൽ കൊല്ലം, കോട്ടയം, പാലക്കാട് ജില്ലകളിൽ ഉയർന്ന താപനില 38 °C വരെയും പത്തനംതിട്ട, ആലപ്പുഴ, തൃശൂർ, എറണാകുളം, കോഴിക്കോട്, കണ്ണൂർ ജില്ലകളിൽ ഉയർന്ന താപനില 37°C വരെയും; തിരുവനന്തപുരം, മലപ്പുറം, കാസർഗോഡ് ജില്ലകളിൽ ഉയർന്ന താപനില 36°C വരെയും ഉയരാൻ (സാധാരണയെക്കാൾ 2 to 3˚C വരെ കൂടുതൽ) സാധ്യതയെന്ന് കേന്ദ്ര കാലാവസ്ഥ വകുപ്പ് അറിയിക്കുന്നു.",
-      "ഉയർന്ന താപനിലയും ഈർപ്പമുള്ള വായുവും കാരണം ഈ ജില്ലകളിൽ, മലയോര മേഖലകളിലൊഴികെ, 2026 മാർച്ച് 26 മുതൽ 27 വരെ ചൂടും അസ്വസ്ഥതയുമുള്ള കാലാവസ്ഥയ്ക്ക് സാധ്യതയുണ്ട്.",
+      "ഇന്ന് (2026 മാർച്ച് 27) കൊല്ലം, പാലക്കാട് ജില്ലകളിൽ ഉയർന്ന താപനില 38 °C വരെയും പത്തനംതിട്ട, ആലപ്പുഴ, കോട്ടയം, തൃശൂർ, എറണാകുളം, കോഴിക്കോട്, കണ്ണൂർ ജില്ലകളിൽ ഉയർന്ന താപനില 37°C വരെയും; തിരുവനന്തപുരം, മലപ്പുറം, കാസർഗോഡ് ജില്ലകളിൽ ഉയർന്ന താപനില 36°C വരെയും ഉയരാൻ (സാധാരണയെക്കാൾ 2 to 3˚C വരെ കൂടുതൽ) സാധ്യതയെന്ന് കേന്ദ്ര കാലാവസ്ഥ വകുപ്പ് അറിയിക്കുന്നു.",
+      "ഉയർന്ന താപനിലയും ഈർപ്പമുള്ള വായുവും കാരണം ഈ ജില്ലകളിൽ, മലയോര മേഖലകളിലൊഴികെ, ഇന്ന് (2026 മാർച്ച് 27) ചൂടും അസ്വസ്ഥതയുമുള്ള കാലാവസ്ഥയ്ക്ക് സാധ്യതയുണ്ട്.",
       "സംസ്ഥാനത്ത് പൊതുവെ ചൂട് വർധിച്ചു വരുന്ന സാഹചര്യത്തിൽ പൊതുജനങ്ങൾക്കായി സംസ്ഥാന ദുരന്ത നിവാരണ അതോറിറ്റി പുറപ്പെടുവിക്കുന്ന ജാഗ്രത നിർദേശങ്ങൾ.",
       "ഉയർന്ന ചൂട് സൂര്യാഘാതം, സൂര്യാതപം, നിർജലീകരണം തുടങ്ങി നിരവധി ഗുരുതരമായ ആരോഗ്യപ്രശ്നങ്ങൾക്ക് കാരണമാകും. ആയതിനാൽ പൊതുജനങ്ങൾ താഴെ പറയുന്ന നിർദേശങ്ങൾ പാലിക്കേണ്ടതാണ്."
     ],
@@ -19,10 +19,10 @@
       "ml": "മഞ്ഞ അലർട്ട്",
       "en": "Yellow Alert"
     },
-    "issued_time": "01.00 PM 26/03/2026",
+    "issued_time": "02.00 PM 27/03/2026",
     "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-27-at-10.40.16-AM.jpeg",
     "min_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/02/T-MIN-8.jpeg",
-    "humid_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/03/Hot-Humid-Map.jpg"
+    "humid_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/03/Hot-Humid-Map-1.jpg"
   },
   "stations": [
     {
@@ -582,35 +582,35 @@
       "obs_dep": -0.5,
       "rainfall": "NIL",
       "humidity": 76.0,
-      "fc_max": 37.0,
+      "fc_max": 34.0,
       "fc_min": 27.0,
-      "fc_dep": 2.1,
+      "fc_dep": -0.9,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
-      "day2_max": 37.0,
+      "day2_max": 34.0,
       "day2_min": 27.0,
       "day2_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
-      "day3_max": 37.0,
+      "day3_max": 34.0,
       "day3_min": 27.0,
       "day3_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
-      "day4_max": 37.0,
+      "day4_max": 34.0,
       "day4_min": 27.0,
       "day4_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
-      "day5_max": 37.0,
+      "day5_max": 34.0,
       "day5_min": 27.0,
       "day5_weather": "Partly cloudy sky",
-      "day6_max": 37.0,
+      "day6_max": 34.0,
       "day6_min": 27.0,
       "day6_weather": "Partly cloudy sky",
-      "day7_max": 37.0,
+      "day7_max": 34.0,
       "day7_min": 27.0,
       "day7_weather": "Partly cloudy sky",
       "sunrise": "06:29:00",
       "sunset": "18:40:00",
       "warning_color": null,
       "alert": {
-        "level": "watch",
-        "ml": "ജാഗ്രത",
-        "en": "Watch"
+        "level": "normal",
+        "ml": "സാധാരണ",
+        "en": "Normal"
       }
     }
   ]
