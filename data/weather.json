@@ -1,17 +1,17 @@
 {
   "meta": {
-    "fetched_at": "2026-04-03T05:29:13Z",
+    "fetched_at": "2026-04-03T08:42:19Z",
     "station_count": 12,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
     "ksdma_url": "https://sdma.kerala.gov.in/temperature/",
     "alert_paragraphs": [
       "Kerala State Disaster Management Authority",
-      "ഇന്ന് (02/04/2026) കൊല്ലം, പാലക്കാട് ജില്ലകളിൽ ഉയർന്ന താപനില 38 °C വരെയും കോട്ടയം, എറണാകുളം, തൃശൂർ ജില്ലകളിൽ ഉയർന്ന താപനില 37°C വരെയും; പത്തനംതിട്ട, ആലപ്പുഴ ജില്ലകളിൽ ഉയർന്ന താപനില 36°C വരെയും ഉയരാൻ (സാധാരണയെക്കാൾ 2 to 3˚C വരെ കൂടുതൽ) സാധ്യതയെന്ന് കേന്ദ്ര കാലാവസ്ഥ വകുപ്പ് അറിയിക്കുന്നു.",
-      "ഉയർന്ന താപനിലയും ഈർപ്പമുള്ള വായുവും കാരണം ഈ ജില്ലകളിൽ, മലയോര മേഖലകളിലൊഴികെ, ഇന്ന് (02/04/2026) ചൂടും അസ്വസ്ഥതയുമുള്ള കാലാവസ്ഥയ്ക്ക് സാധ്യതയുണ്ട്.",
       "സംസ്ഥാനത്ത് പൊതുവെ ചൂട് വർധിച്ചു വരുന്ന സാഹചര്യത്തിൽ പൊതുജനങ്ങൾക്കായി സംസ്ഥാന ദുരന്ത നിവാരണ അതോറിറ്റി പുറപ്പെടുവിക്കുന്ന ജാഗ്രത നിർദേശങ്ങൾ.",
       "ഉയർന്ന ചൂട് സൂര്യാഘാതം, സൂര്യാതപം, നിർജലീകരണം തുടങ്ങി നിരവധി ഗുരുതരമായ ആരോഗ്യപ്രശ്നങ്ങൾക്ക് കാരണമാകും. ആയതിനാൽ പൊതുജനങ്ങൾ താഴെ പറയുന്ന നിർദേശങ്ങൾ പാലിക്കേണ്ടതാണ്.",
-      "* പകൽ 11 am മുതല്‍ 3 pm വരെയുള്ള സമയത്ത് നേരിട്ട് ശരീരത്തിൽ കൂടുതൽ സമയം തുടർച്ചയായി സൂര്യപ്രകാശം ഏൽക്കുന്നത് ഒഴിവാക്കുക."
+      "* പകൽ 11 am മുതല്‍ 3 pm വരെയുള്ള സമയത്ത് നേരിട്ട് ശരീരത്തിൽ കൂടുതൽ സമയം തുടർച്ചയായി സൂര്യപ്രകാശം ഏൽക്കുന്നത് ഒഴിവാക്കുക.",
+      "* ദാഹമില്ലെങ്കിലും വെള്ളം കുടിക്കുന്നത് തുടരുക. പരമാവധി ശുദ്ധജലം കുടിക്കുക.",
+      "* നിർജലീകരണമുണ്ടാക്കുന്ന മദ്യം, കാപ്പി, ചായ, കാർബണേറ്റഡ് സോഫ്റ്റ് ഡ്രിങ്കുകൾ തുടങ്ങിയ പാനീയങ്ങള്‍ പകല്‍ സമയത്ത് ഒഴിവാക്കുക."
     ],
     "alert_color": {
       "level": "none",
@@ -19,10 +19,10 @@
       "ml": "സാധാരണ നില",
       "en": "Normal"
     },
-    "issued_time": "02.00 PM 02/04/2026",
-    "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/T-MAX.jpeg",
+    "issued_time": "ും തീയതിയും 11.00 AM; 03/04/2026",
+    "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/TEMP-MAX.jpeg",
     "min_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/02/T-MIN-8.jpeg",
-    "humid_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/Hot-Humid.jpeg"
+    "humid_map": null
   },
   "stations": [
     {
@@ -433,9 +433,9 @@
       "day6_max": 36.0,
       "day6_min": 27.0,
       "day6_weather": "Generally cloudy sky with Light rain",
-      "day7_max": null,
-      "day7_min": null,
-      "day7_weather": null,
+      "day7_max": 37.0,
+      "day7_min": 26.0,
+      "day7_weather": "Partly cloudy sky",
       "sunrise": "06:22",
       "sunset": "18:37",
       "warning_color": null,
