@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-04-20T09:49:53Z",
+    "fetched_at": "2026-04-20T13:07:05Z",
     "station_count": 12,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -20,7 +20,7 @@
       "en": "Yellow Alert"
     },
     "issued_time": "01.30 PM 20/04/2026",
-    "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/T-MAX-5.jpeg",
+    "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-20-at-11.44.37-AM.jpeg",
     "min_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/02/T-MIN-8.jpeg",
     "humid_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/04/Hot-Humid-7.jpeg"
   },
@@ -78,9 +78,9 @@
       "obs_dep": 1.9,
       "rainfall": "NIL",
       "humidity": 83.0,
-      "fc_max": 36.0,
+      "fc_max": 35.0,
       "fc_min": 27.0,
-      "fc_dep": 2.3,
+      "fc_dep": 1.3,
       "fc_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
       "day2_max": 35.0,
       "day2_min": 27.0,
@@ -104,9 +104,9 @@
       "sunset": "18:32",
       "warning_color": null,
       "alert": {
-        "level": "watch",
-        "ml": "ജാഗ്രത",
-        "en": "Watch"
+        "level": "normal",
+        "ml": "സാധാരണ",
+        "en": "Normal"
       }
     },
     {
@@ -162,9 +162,9 @@
       "obs_dep": 3.3,
       "rainfall": "NIL",
       "humidity": 85.0,
-      "fc_max": 38.0,
+      "fc_max": 39.0,
       "fc_min": 25.0,
-      "fc_dep": 2.7,
+      "fc_dep": 3.7,
       "fc_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
       "day2_max": 38.0,
       "day2_min": 25.0,
@@ -415,7 +415,7 @@
       "rainfall": "NIL",
       "humidity": null,
       "fc_max": 38.0,
-      "fc_min": 25.0,
+      "fc_min": 26.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky",
       "day2_max": 38.0,
