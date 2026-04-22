@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-04-22T13:02:33Z",
+    "fetched_at": "2026-04-22T16:49:47Z",
     "station_count": 13,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -36,9 +36,9 @@
       "obs_dep": 1.2,
       "rainfall": "3.00",
       "humidity": 69.0,
-      "fc_max": 33.0,
+      "fc_max": 34.0,
       "fc_min": 24.0,
-      "fc_dep": -0.2,
+      "fc_dep": 0.8,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 33.0,
       "day2_min": 24.0,
@@ -204,9 +204,9 @@
       "obs_dep": 2.9,
       "rainfall": "18.00",
       "humidity": 91.0,
-      "fc_max": 39.0,
+      "fc_max": 40.0,
       "fc_min": 24.0,
-      "fc_dep": 3.9,
+      "fc_dep": 4.9,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 39.0,
       "day2_min": 24.0,
@@ -230,9 +230,9 @@
       "sunset": "18:32",
       "warning_color": null,
       "alert": {
-        "level": "alert",
-        "ml": "അലേർട്ട്",
-        "en": "Alert"
+        "level": "warning",
+        "ml": "മുന്നറിയിപ്പ്",
+        "en": "Warning"
       }
     },
     {
@@ -330,7 +330,7 @@
       "obs_dep": 2.2,
       "rainfall": "NIL",
       "humidity": 79.0,
-      "fc_max": 37.0,
+      "fc_max": 39.0,
       "fc_min": 25.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky",
@@ -356,9 +356,9 @@
       "sunset": "18:36",
       "warning_color": null,
       "alert": {
-        "level": "watch",
-        "ml": "ജാഗ്രത",
-        "en": "Watch"
+        "level": "alert",
+        "ml": "അലേർട്ട്",
+        "en": "Alert"
       }
     },
     {
@@ -372,7 +372,7 @@
       "obs_dep": 3.0,
       "rainfall": "NIL",
       "humidity": 76.0,
-      "fc_max": 39.0,
+      "fc_max": 41.0,
       "fc_min": 27.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky",
@@ -398,9 +398,9 @@
       "sunset": "18:35",
       "warning_color": null,
       "alert": {
-        "level": "alert",
-        "ml": "അലേർട്ട്",
-        "en": "Alert"
+        "level": "warning",
+        "ml": "മുന്നറിയിപ്പ്",
+        "en": "Warning"
       }
     },
     {
@@ -414,7 +414,7 @@
       "obs_dep": null,
       "rainfall": "NIL",
       "humidity": 72.0,
-      "fc_max": 35.0,
+      "fc_max": 36.0,
       "fc_min": 27.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
@@ -440,9 +440,9 @@
       "sunset": "18:38",
       "warning_color": null,
       "alert": {
-        "level": "normal",
-        "ml": "സാധാരണ",
-        "en": "Normal"
+        "level": "watch",
+        "ml": "ജാഗ്രത",
+        "en": "Watch"
       }
     },
     {
@@ -475,7 +475,7 @@
       "day6_max": 38.0,
       "day6_min": 27.0,
       "day6_weather": "Partly cloudy sky",
-      "day7_max": 39.0,
+      "day7_max": 38.0,
       "day7_min": 27.0,
       "day7_weather": "Partly cloudy sky",
       "sunrise": "06:12",
