@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-04-28T13:29:35Z",
+    "fetched_at": "2026-04-28T17:30:11Z",
     "station_count": 13,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -120,7 +120,7 @@
       "obs_dep": null,
       "rainfall": "NIL",
       "humidity": 86.0,
-      "fc_max": 34.0,
+      "fc_max": 33.0,
       "fc_min": 27.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
