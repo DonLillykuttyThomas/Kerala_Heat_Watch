@@ -1,7 +1,7 @@
 {
   "meta": {
-    "fetched_at": "2026-04-29T09:57:31Z",
-    "station_count": 12,
+    "fetched_at": "2026-04-29T13:23:07Z",
+    "station_count": 13,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
     "ksdma_url": "https://sdma.kerala.gov.in/temperature/",
@@ -120,7 +120,7 @@
       "obs_dep": null,
       "rainfall": "NIL",
       "humidity": 84.0,
-      "fc_max": 34.0,
+      "fc_max": 32.0,
       "fc_min": 26.0,
       "fc_dep": null,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
@@ -152,6 +152,48 @@
       }
     },
     {
+      "stat_code": "30008",
+      "name": "Kollam",
+      "district": "Kerala",
+      "lat": 8.8833,
+      "lon": 76.6,
+      "source": "observed",
+      "obs_max": null,
+      "obs_dep": null,
+      "rainfall": "NIL",
+      "humidity": null,
+      "fc_max": 35.0,
+      "fc_min": 27.0,
+      "fc_dep": null,
+      "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day2_max": 35.0,
+      "day2_min": 27.0,
+      "day2_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day3_max": 35.0,
+      "day3_min": 27.0,
+      "day3_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day4_max": 35.0,
+      "day4_min": 27.0,
+      "day4_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day5_max": 35.0,
+      "day5_min": 27.0,
+      "day5_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day6_max": 35.0,
+      "day6_min": 27.0,
+      "day6_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "day7_max": 35.0,
+      "day7_min": 27.0,
+      "day7_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
+      "sunrise": "06:09",
+      "sunset": "18:34",
+      "warning_color": null,
+      "alert": {
+        "level": "normal",
+        "ml": "സാധാരണ",
+        "en": "Normal"
+      }
+    },
+    {
       "stat_code": "43354",
       "name": "Punalur",
       "district": "Kollam",
@@ -162,9 +204,9 @@
       "obs_dep": 2.2,
       "rainfall": "25.00",
       "humidity": 84.0,
-      "fc_max": 37.0,
+      "fc_max": 35.0,
       "fc_min": 24.0,
-      "fc_dep": 2.2,
+      "fc_dep": 0.2,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 37.0,
       "day2_min": 24.0,
@@ -188,9 +230,9 @@
       "sunset": "18:33",
       "warning_color": null,
       "alert": {
-        "level": "watch",
-        "ml": "ജാഗ്രത",
-        "en": "Watch"
+        "level": "normal",
+        "ml": "സാധാരണ",
+        "en": "Normal"
       }
     },
     {
@@ -456,9 +498,9 @@
       "obs_dep": 3.5,
       "rainfall": "NIL",
       "humidity": 72.0,
-      "fc_max": 38.0,
+      "fc_max": 37.0,
       "fc_min": 28.0,
-      "fc_dep": 3.6,
+      "fc_dep": 2.6,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 38.0,
       "day2_min": 28.0,
@@ -482,9 +524,9 @@
       "sunset": "18:40",
       "warning_color": null,
       "alert": {
-        "level": "alert",
-        "ml": "അലേർട്ട്",
-        "en": "Alert"
+        "level": "watch",
+        "ml": "ജാഗ്രത",
+        "en": "Watch"
       }
     },
     {
