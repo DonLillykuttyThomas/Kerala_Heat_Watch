@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-05-03T09:13:50Z",
+    "fetched_at": "2026-05-03T12:46:21Z",
     "station_count": 13,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -78,9 +78,9 @@
       "obs_dep": 2.0,
       "rainfall": "NIL",
       "humidity": 81.0,
-      "fc_max": 35.0,
+      "fc_max": 36.0,
       "fc_min": 26.0,
-      "fc_dep": 1.5,
+      "fc_dep": 2.5,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 36.0,
       "day2_min": 26.0,
@@ -104,9 +104,9 @@
       "sunset": "18:32",
       "warning_color": null,
       "alert": {
-        "level": "normal",
-        "ml": "സാധാരണ",
-        "en": "Normal"
+        "level": "watch",
+        "ml": "ജാഗ്രത",
+        "en": "Watch"
       }
     },
     {
@@ -498,9 +498,9 @@
       "obs_dep": 2.0,
       "rainfall": "NIL",
       "humidity": 70.0,
-      "fc_max": 36.0,
+      "fc_max": 38.0,
       "fc_min": 28.0,
-      "fc_dep": 1.6,
+      "fc_dep": 3.6,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 36.0,
       "day2_min": 28.0,
@@ -524,9 +524,9 @@
       "sunset": "18:40",
       "warning_color": null,
       "alert": {
-        "level": "watch",
-        "ml": "ജാഗ്രത",
-        "en": "Watch"
+        "level": "alert",
+        "ml": "അലേർട്ട്",
+        "en": "Alert"
       }
     },
     {
@@ -540,9 +540,9 @@
       "obs_dep": 0.3,
       "rainfall": "NIL",
       "humidity": 74.0,
-      "fc_max": 35.0,
+      "fc_max": 34.0,
       "fc_min": 27.0,
-      "fc_dep": 0.1,
+      "fc_dep": -0.9,
       "fc_weather": "Partly cloudy sky with one or two spells of rain or thundershowers",
       "day2_max": 35.0,
       "day2_min": 27.0,
