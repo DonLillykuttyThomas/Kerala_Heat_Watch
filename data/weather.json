@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-05-09T06:09:24Z",
+    "fetched_at": "2026-05-09T09:08:20Z",
     "station_count": 10,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -19,7 +19,7 @@
       "ml": "സാധാരണ നില",
       "en": "Normal"
     },
-    "issued_time": "11.00 AM- 08/05/2026",
+    "issued_time": null,
     "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/05/Temp-Max-1.jpeg",
     "min_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/02/T-MIN-8.jpeg",
     "humid_map": null
