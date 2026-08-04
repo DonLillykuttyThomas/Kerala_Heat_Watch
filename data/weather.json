@@ -1,22 +1,27 @@
 {
   "meta": {
-    "fetched_at": "2026-08-04T13:48:08Z",
+    "fetched_at": "2026-08-04T17:28:30Z",
     "station_count": 19,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
     "ksdma_url": "https://sdma.kerala.gov.in/temperature/",
     "alert_paragraphs": [
-      "Alert data temporarily unavailable."
+      "Kerala State Disaster Management Authority",
+      "സംസ്ഥാനത്ത് ഉയർന്ന ചൂട് റിപ്പോർട്ട് ചെയ്യപ്പെടുന്ന സാഹചര്യത്തിൽ പൊതുജനങ്ങൾക്കായി സംസ്ഥാന ദുരന്ത നിവാരണ അതോറിറ്റി പുറപ്പെടുവിക്കുന്ന ജാഗ്രത നിർദേശങ്ങൾ.",
+      "ഉയർന്ന ചൂട് സൂര്യാഘാതം, സൂര്യാതപം, നിർജലീകരണം തുടങ്ങി നിരവധി ഗുരുതരമായ ആരോഗ്യപ്രശ്നങ്ങൾക്ക് കാരണമാകും. ആയതിനാൽ പൊതുജനങ്ങൾ താഴെ പറയുന്ന നിർദേശങ്ങൾ പാലിക്കേണ്ടതാണ്.",
+      "* പകൽ 11 am മുതല്‍ 3 pm വരെയുള്ള സമയത്ത് നേരിട്ട് ശരീരത്തിൽ കൂടുതൽ സമയം തുടർച്ചയായി സൂര്യപ്രകാശം ഏൽക്കുന്നത് ഒഴിവാക്കുക.",
+      "* ദാഹമില്ലെങ്കിലും വെള്ളം കുടിക്കുന്നത് തുടരുക. പരമാവധി ശുദ്ധജലം കുടിക്കുക.",
+      "* നിർജലീകരണമുണ്ടാക്കുന്ന മദ്യം, കാപ്പി, ചായ, കാർബണേറ്റഡ് സോഫ്റ്റ് ഡ്രിങ്കുകൾ തുടങ്ങിയ പാനീയങ്ങള്‍ പകല്‍ സമയത്ത് ഒഴിവാക്കുക."
     ],
     "alert_color": {
       "level": "none",
-      "color": "#6b7280",
-      "ml": "",
-      "en": ""
+      "color": "#22c55e",
+      "ml": "സാധാരണ നില",
+      "en": "Normal"
     },
     "issued_time": null,
-    "max_map": null,
-    "min_map": null,
+    "max_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/05/T-MAX-19.jpeg",
+    "min_map": "https://sdma.kerala.gov.in/wp-content/uploads/2026/02/T-MIN-8.jpeg",
     "humid_map": null
   },
   "stations": [
