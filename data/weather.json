@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-08-07T05:27:20Z",
+    "fetched_at": "2026-08-07T08:46:05Z",
     "station_count": 19,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -643,9 +643,9 @@
       "day6_max": 35.0,
       "day6_min": 28.0,
       "day6_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "day7_max": null,
-      "day7_min": null,
-      "day7_weather": null,
+      "day7_max": 36.0,
+      "day7_min": 27.0,
+      "day7_weather": "Generally cloudy sky with Light rain",
       "sunrise": "06:16",
       "sunset": "18:49",
       "warning_color": null,
