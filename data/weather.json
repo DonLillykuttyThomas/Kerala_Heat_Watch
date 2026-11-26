@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-11-26T05:57:44Z",
+    "fetched_at": "2026-11-26T17:58:26Z",
     "station_count": 17,
     "imd_source": "India Meteorological Department",
     "ksdma_source": "Kerala State Disaster Management Authority",
@@ -58,8 +58,8 @@
       "day7_max": 32.0,
       "day7_min": 25.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:19:00",
-      "sunset": "18:00:00",
+      "sunrise": "06:19",
+      "sunset": "18:00",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -100,8 +100,8 @@
       "day7_max": 33.0,
       "day7_min": 25.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:19:00",
-      "sunset": "18:00:00",
+      "sunrise": "06:19",
+      "sunset": "18:00",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -184,8 +184,8 @@
       "day7_max": 35.0,
       "day7_min": 23.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:20:00",
-      "sunset": "17:59:00",
+      "sunrise": "06:20",
+      "sunset": "17:59",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -268,8 +268,8 @@
       "day7_max": 35.0,
       "day7_min": 24.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:22:00",
-      "sunset": "18:00:00",
+      "sunrise": "06:22",
+      "sunset": "18:00",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -310,8 +310,8 @@
       "day7_max": 31.0,
       "day7_min": 23.6,
       "day7_weather": "Partly cloudy sky",
-      "sunrise": "06:23:00",
-      "sunset": "18:00:00",
+      "sunrise": "06:23",
+      "sunset": "18:00",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -604,8 +604,8 @@
       "day7_max": 35.0,
       "day7_min": 25.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:28:00",
-      "sunset": "18:00:00",
+      "sunrise": "06:28",
+      "sunset": "18:00",
       "warning_color": null,
       "alert": {
         "level": "normal",
@@ -688,8 +688,8 @@
       "day7_max": 35.0,
       "day7_min": 25.0,
       "day7_weather": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
-      "sunrise": "06:30:00",
-      "sunset": "18:01:00",
+      "sunrise": "06:30",
+      "sunset": "18:01",
       "warning_color": null,
       "alert": {
         "level": "normal",
